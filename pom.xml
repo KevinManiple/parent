@@ -6,6 +6,17 @@
 	<version>1.0.1-RELEASE</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<!-- Dependency versions -->
+		<spring.version>4.3.2.RELEASE</spring.version>
+		<spring.boot.version>1.4.0.RELEASE</spring.boot.version>
+		<!-- Project configuration -->
+		<project.encoding>UTF-8</project.encoding>
+		<jdk.version>1.7</jdk.version>
+		<skip.test>true</skip.test>
+		<project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -347,7 +358,26 @@
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>1.7.21</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-autoconfigure</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
 
 		</dependencies>
 	</dependencyManagement>
@@ -390,16 +420,15 @@
 					<testFailureIgnore>${skip.test}</testFailureIgnore>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
-	<properties>
-		<!-- Dependency versions -->
-		<spring.version>4.3.2.RELEASE</spring.version>
-		<!-- Project configuration -->
-		<project.encoding>UTF-8</project.encoding>
-		<jdk.version>1.7</jdk.version>
-		<skip.test>true</skip.test>
-		<project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
-	</properties>
 </project>
