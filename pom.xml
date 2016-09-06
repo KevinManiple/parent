@@ -10,6 +10,7 @@
 		<!-- Dependency versions -->
 		<spring.version>4.3.2.RELEASE</spring.version>
 		<spring.boot.version>1.4.0.RELEASE</spring.boot.version>
+		<httpclient.version>4.5.2</httpclient.version>
 		<!-- Project configuration -->
 		<project.encoding>UTF-8</project.encoding>
 		<jdk.version>1.7</jdk.version>
@@ -259,18 +260,13 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>fluent-hc</artifactId>
+				<version>${httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
-				<version>4.5.2</version>
-				<exclusions>
-					<exclusion>
-						<groupId>commons-codec</groupId>
-						<artifactId>commons-codec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>commons-logging</groupId>
-						<artifactId>commons-logging</artifactId>
-					</exclusion>
-				</exclusions>
+				<version>${httpclient.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
